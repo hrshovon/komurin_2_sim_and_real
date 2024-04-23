@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="">
+
+  <xacro:arg name="prefix" default="diffdrive_robot" />
+
+  <xacro:include filename="$(find diffdrive_arduino)/urdf/robot_core.xacro" />
+  
+
+  <!-- Import diffbot ros2_control description -->
+  <xacro:include filename="$(find diffdrive_arduino)/ros2_control/diffbot.ros2_control.xacro" />
+
+  <xacro:diffbot prefix="$(arg prefix)" />
+
+  <xacro:diffbot_ros2_control
+    name="DiffBot" prefix="$(arg prefix)" />
+    
+</robot>
